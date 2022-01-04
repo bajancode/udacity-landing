@@ -18,6 +18,18 @@ body {
     color: #fff;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* li {
+    list-style-type: none;
+} */
+
+/* li:active {
+    scroll-behavior: smooth;
+} */
 
 /* Typeography General*/
 h1 {
