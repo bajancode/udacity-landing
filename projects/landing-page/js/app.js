@@ -22,22 +22,22 @@ let sectionsArray = Array.from(sections)
 //need a fucntion that when LI is clicked, the corresponding SECTION has a class added
 
 //Returns boolean if an element is in the viewport
-// function isInViewport(element) {
-//     const rect = element.getBoundingClientRect();
-//     return (
-//         rect.top >= 0 &&
-//         rect.left >= 0 &&
-//         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-//         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-//     );
-// }
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
 
 //creates navbar anchor elements  
 function createNav(sectionsArray) {
     for(let i=0; i < sectionsArray.length; i++) {
         let section = sectionsArray[i]
         const li = document.createElement('li');
-        li.innerHTML+= `<a href="#${section.id}">${section.dataset.nav}</a>`;
+        li.innerHTML+= `<a href="#${section.id}" class="menu__link">${section.dataset.nav}</a>`;
         navbar.appendChild(li);
     }
 }
