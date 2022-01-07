@@ -32,6 +32,25 @@ function isInViewport(element) {
     );
 }
 
+//per mentor suggestion, but now to make it work...need to do like a scroll event or something? On scroll?
+function activateSections(){
+    for(sec of sections){
+        if(isInViewport(sec)){
+            sec.classList.add("your-active-class");
+        }else {
+            sec.classList.remove("your-active-class");
+        }
+    }
+}
+
+activateSections()
+activateSections(sections)
+
+document.addEventListener("scroll", activateSections())
+document.addEventListener("scroll", activateSections(sections))
+
+
+
 //creates navbar anchor elements  
 function createNav(sectionsArray) {
     for(let i=0; i < sectionsArray.length; i++) {
@@ -73,14 +92,16 @@ function clickLi(arr) {
 
 //adds active-class to section element when clicking the corresponding "li"
 
-function addSectionClass(sections) {
-    for(let i=0; i < sections.length; i++) {
-        let section = sections[i]
-        clickLi(getLi) ? section.classList.add("my-active-class") : console.log("no class addded")
-    }
-}
+// function addSectionClass(sections) {
+//     for(let i=0; i < sections.length; i++) {
+//         let section = sections[i]
+//         clickLi(getLi) ? section.classList.add("my-active-class") : console.log("no class addded")
+//     }
+// }
 
-addSectionClass(sections)
+// addSectionClass(sections)
+
+
 
 // const clickLi = (li) => {
 //     li.addEventListener("click", function(event) {
